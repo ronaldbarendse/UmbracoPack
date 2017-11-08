@@ -1,0 +1,17 @@
+﻿branches:
+  only:
+    - master
+
+assembly_info:
+  patch: false
+
+configuration: Release
+
+build:
+  project: UmbracoPack.sln
+
+after_build:
+  - cmd: msbuild -t:pack UmbracoPack/UmbracoPack.csproj
+
+artifacts:
+  - path: '**\*.nupkg'

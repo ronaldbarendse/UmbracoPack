@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-	<UsingTask TaskName="UmbracoPack" AssemblyFile="..\tasks\net45\UmbracoPack.dll"/>
+	<UsingTask TaskName="UmbracoPack" AssemblyFile="..\tools\UmbracoPack.dll"/>
 	<Target Name="UmbracoPack" AfterTargets="Pack">
 		<UmbracoPack NuspecFile="$(BaseIntermediateOutputPath)$(Configuration)\$(PackageId).$(PackageVersion).nuspec" UmbPackageFile="$(BaseIntermediateOutputPath)$(Configuration)\$(PackageId).$(PackageVersion).xml" TargetPath="$(PackageOutputPath)" />
 	</Target>

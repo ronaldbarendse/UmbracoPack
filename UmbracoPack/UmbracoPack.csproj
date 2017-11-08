@@ -5,7 +5,7 @@
 		<Authors>Ronald Barendse</Authors>
 		<Description>Create an Umbraco package using MSBuild</Description>
 		<NoPackageAnalysis>true</NoPackageAnalysis>
-		<BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+		<IsTool>true</IsTool>
 	</PropertyGroup>
 	<ItemGroup>
 		<Content Include="UmbracoPack.targets">
@@ -14,6 +14,9 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Reference Include="System.IO.Compression" />
+		<PackageReference Include="GitVersion" Version="4.0.0-beta0012">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.Build.Framework" Version="14.3.0">
 			<PrivateAssets>All</PrivateAssets>
 		</PackageReference>
