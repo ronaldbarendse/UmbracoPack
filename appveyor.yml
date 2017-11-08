@@ -1,0 +1,24 @@
+﻿branches:
+  only:
+    - master
+
+image: Visual Studio 2017
+
+configuration: Release
+
+before_build:
+  - nuget restore
+
+build:
+  project: UmbracoPack.sln
+
+after_build:
+  - cmd: msbuild -t:pack UmbracoPack/UmbracoPack.csproj
+
+artifacts:
+  - path: '**\*.nupkg'
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: DEnWPvYW932l2yOEEcwYNYAFnvkE7OVlBhXrF5HOuELcRBfmIDxM3sdOJcjmu/Jo

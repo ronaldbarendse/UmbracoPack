@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net45</TargetFramework>
+		<Authors>Ronald Barendse</Authors>
+		<Description>Create an Umbraco package using MSBuild</Description>
+		<NoPackageAnalysis>true</NoPackageAnalysis>
+		<IsTool>true</IsTool>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="UmbracoPack.targets">
+			<PackagePath>build</PackagePath>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="System.IO.Compression" />
+		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Build.Framework" Version="14.3.0">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Build.Utilities.Core" Version="14.3.0">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
